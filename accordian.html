@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>/* Hide the default summary text */
+.toggle-text summary {
+  color: transparent;
+}
+
+/* Use a pseudo-element for custom text in the closed state */
+.toggle-text summary::before {
+  content: "Show more";
+  color: initial; /* Revert color for accessibility */
+}
+
+/* Change the pseudo-element content when the <details> is open */
+.toggle-text[open] summary::before {
+  content: "Show less";
+}
+
+/* Optional: customize or hide the default triangle/arrow marker */
+.toggle-text summary::-webkit-details-marker {
+  display: none; /* For Chrome/Safari */
+}
+
+.toggle-text summary::marker {
+  display: none; /* Standard syntax (Firefox/Edge) */
+}
+</style>
+<body>
+    <details class="toggle-text">
+  <summary>Show more  </summary>
+  <p>Detailed information goes here.</p>
+</details>
+
+</body>
+</html>
