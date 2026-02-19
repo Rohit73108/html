@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivalik College of Engineering | Dehradun</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            background: #002366;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo { color: white; font-weight: bold; font-size: 1.4rem; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,35,102,0.7), rgba(0,35,102,0.7)), url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .accreditation-badge {
+            background: #FFD700;
+            color: #002366;
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Section Settings */
+        section { padding: 100px 10%; min-height: 80vh; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; text-align: center; }
+
+        /* Specific Section Colors */
+        #history { background-color: #f4f4f4; color: #333; }
+        #courses { background-color: #008080; color: white; }
+        #campus { background-color: #2c3e50; color: white; }
+        #features { background-color: #ffffff; color: #002366; }
+
+        /* Course Cards */
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .course-card:hover { background: #006666; transform: scale(1.03); }
+
+        /* Feature List */
+        .feature-item {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        footer { background: #111; color: white; text-align: center; padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SHIVALIK COLLEGE</div>
+        <div class="nav-links">
+            <a href="#history">History</a>
+            <a href="#courses">Courses</a>
+            <a href="#campus">Campus</a>
+            <a href="#features">Excellence</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="accreditation-badge">NAAC A+ GRADE | NBA ACCREDITED</div>
+        <h1>Shivalik College of Engineering</h1>
+        <p>A Premier Technical Institution in the Foothills of Dehradun, Uttarakhand</p>
+    </header>
+
+    <section id="history">
+        <h2>Legacy Since 2008</h2>
+        <p>Established in 2008 under the Rijan Educational Society, Shivalik College has grown into a beacon of technical excellence in North India. Over the past 16 years, we have transitioned from a focused engineering center to an autonomous powerhouse recognized by the UGC.</p>
+        <p>Our history is defined by a 92% placement record and a commitment to producing industry-ready professionals for the global market.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Our Core Specializations</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <h3>Computer Science (CSE)</h3>
+                <p>Specializations in AI, Machine Learning, and Data Science in partnership with industry leaders.</p>
+            </div>
+            <div class="course-card">
+                <h3>Mechanical Engineering</h3>
+                <p>Focus on robotics, smart manufacturing, and digital manufacturing workflows.</p>
+            </div>
+            <div class="course-card">
+                <h3>Electrical Engineering</h3>
+                <p>Advanced studies in IoT-integrated power systems and semiconductor design.</p>
+            </div>
+            <div class="course-card">
+                <h3>Civil Engineering</h3>
+                <p>Modern structural engineering and sustainable infrastructure design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="#campus">
+        <h2>Lush Green Dehradun Campus</h2>
+        <p>Located on the Shimla Bypass Road, our 50-acre campus offers a serene environment conducive to high-level research and learning.</p>
+        <p>The campus features smart classrooms, high-speed Wi-Fi, departmental libraries, and the unique "Learning Resource Center" dedicated to the former President of India.</p>
+    </section>
+
+    <section id="features">
+        <h2>Why Shivalik Stands Out</h2>
+        <div class="feature-item"><strong>NBA Accredited:</strong> Ensuring international standards of technical education.</div>
+        <div class="feature-item"><strong>Strategic Location:</strong> Situated in Dehradun, a hub for education and nature.</div>
+        <div class="feature-item"><strong>Industry Collaboration:</strong> Strong tie-ups with IIT Ropar, IIT Roorkee, and L&T EduTech.</div>
+        <div class="feature-item"><strong>Research Hub:</strong> Features "Shivalik iHub" and CBII for incubation and innovation.</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shivalik College of Engineering, Dehradun. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

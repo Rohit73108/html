@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Formation Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a; /* Dark background taaki red pop kare */
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Heart Container */
+        .heart {
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            
+            /* Initial State: Hidden and Rotated */
+            transform: rotate(-45deg) scale(0);
+            
+            /* Animation 1: Square Formation (Roll in) */
+            /* Animation 2: Heartbeat (starts after formation) */
+            animation: 
+                rollIn 1s ease-out forwards, 
+                beat 1.2s infinite 2.5s; /* 2.5s delay waits for formation to finish */
+                
+            box-shadow: -10px 10px 90px crimson;
+        }
+
+        /* The Circles (Lobes) */
+        .heart::before,
+        .heart::after {
+            content: "";
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            
+            /* Initial State: Scale 0 (Invisible) */
+            transform: scale(0);
+        }
+
+        /* Left Circle Position & Animation */
+        .heart::before {
+            top: -50px;
+            left: 0;
+            /* Pop animation starts after square is done (1s delay) */
+            animation: popIn 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.27) forwards 1s;
+        }
+
+        /* Right Circle Position & Animation */
+        .heart::after {
+            top: 0;
+            right: -50px;
+            /* Pop animation starts after left circle (1.5s delay) */
+            animation: popIn 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.27) forwards 1.5s;
+        }
+
+        /* --- Keyframes (Jadoo yahan hai) --- */
+
+        /* 1. Square ghumte hue aayega */
+        @keyframes rollIn {
+            0% { transform: rotate(0deg) scale(0); opacity: 0; }
+            100% { transform: rotate(-45deg) scale(1); opacity: 1; }
+        }
+
+        /* 2. Circles pop karke bahar aayenge (Elastic effect) */
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.2); } /* Thoda bada hoga */
+            100% { transform: scale(1); } /* Normal size */
+        }
+
+        /* 3. Dhadakne wala animation */
+        @keyframes beat {
+            0% { transform: rotate(-45deg) scale(1); }
+            15% { transform: rotate(-45deg) scale(1.1); }
+            30% { transform: rotate(-45deg) scale(1); }
+            45% { transform: rotate(-45deg) scale(1.1); }
+            60% { transform: rotate(-45deg) scale(1); }
+            100% { transform: rotate(-45deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart"></div>
+
+</body>
+</html>

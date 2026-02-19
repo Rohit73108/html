@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Languages Hub</title>
+    <style>
+        
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f0f2f5; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        
+    
+        .page { display: none; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        
+    
+        .active { display: block; }
+
+        
+        .lang-list { list-style: none; padding: 0; }
+        .lang-list li { margin: 15px 0; }
+        .lang-link { text-decoration: none; color: #3498db; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+        .lang-link:hover { color: #2980b9; text-decoration: underline; }
+        
+        .back-btn { display: inline-block; margin-top: 20px; color: #7f8c8d; text-decoration: none; cursor: pointer; font-size: 0.9rem; }
+        .back-btn:hover { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <div id="home" class="page active">
+        <h1>Programming Languages Directory</h1>
+        <p>Click a language to view its details:</p>
+        <ul class="lang-list">
+            <li><span class="lang-link" onclick="showPage('python')">Python</span></li>
+            <li><span class="lang-link" onclick="showPage('javascript')">JavaScript</span></li>
+            <li><span class="lang-link" onclick="showPage('cpp')">C++</span></li>
+            <li><span class="lang-link" onclick="showPage('java')">Java</span></li>
+        </ul>
+    </div>
+
+    <div id="python" class="page">
+        <h1>Python</h1>
+        <p>Python is a versatile, high-level language. It is incredibly popular for <strong>Artificial Intelligence</strong>, Data Science, and web automation due to its simple syntax.</p>
+        <span class="back-btn" onclick="showPage('home')">← Back to Directory</span>
+    </div>
+
+    <div id="javascript" class="page">
+        <h1>JavaScript</h1>
+        <p>JavaScript is the language of the browser. It allows you to create <strong>interactive websites</strong>, mobile apps (React Native), and even server-side applications (Node.js).</p>
+        <span class="back-btn" onclick="showPage('home')">← Back to Directory</span>
+    </div>
+
+    <div id="cpp" class="page">
+        <h1>C++</h1>
+        <p>C++ is a powerful, high-performance language used in <strong>Game Development</strong> (Unreal Engine), operating systems, and high-frequency trading applications.</p>
+        <span class="back-btn" onclick="showPage('home')">← Back to Directory</span>
+    </div>
+
+    <div id="java" class="page">
+        <h1>Java</h1>
+        <p>Java is a "Write Once, Run Anywhere" language. It is the backbone of many <strong>Enterprise Applications</strong> and was the original language for Android app development.</p>
+        <span class="back-btn" onclick="showPage('home')">← Back to Directory</span>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+        
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+        
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
